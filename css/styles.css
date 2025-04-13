@@ -6,12 +6,6 @@ body {
     background-color: #ffffff;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
 header {
     background: #35424a;
     color: #ffffff;
@@ -20,6 +14,7 @@ header {
     align-items: center; /* Centre verticalement */
     justify-content: center; /* Centre horizontalement */
 }
+
 main {
     /*background-image: url('../arriere_plan_paysage_africain.jpg');
     background-size: cover;  Ajuste l'image pour couvrir tout le fond */
@@ -29,11 +24,7 @@ main {
     margin: 0px 0; /* Ajoute un peu d'espace extérieur */
     min-height: calc(100vh - 200px); /* Hauteur de la section principale */
     padding-bottom: 100px;
-    
 }
-
-
-
 
 footer {
     background: #35424a;
