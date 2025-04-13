@@ -15,9 +15,11 @@ body {
 header {
     background: #35424a;
     color: #ffffff;
-    padding: 20px 0;
+    padding: 0; /* Supprime le padding vertical */
     text-align: center;
-    height: 100px; /* Hauteur de l'en-tête */
+    display: flex; /* Active Flexbox */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
 }
 main {
     /*background-image: url('../arriere_plan_paysage_africain.jpg');
@@ -27,6 +29,8 @@ main {
     padding: 50px; /* Ajoute un peu d'espace intérieur */
     margin: 0px 0; /* Ajoute un peu d'espace extérieur */
     min-height: calc(100vh - 200px); /* Hauteur de la section principale */
+    padding-bottom: 100px;
+    
 }
 
 
@@ -36,7 +40,7 @@ footer {
     text-align: center;
     padding: 10px 0;
     background: #35424a;
-    color: #990b0b;
+    color: #ffffff;
     position: fixed;
     bottom: 0;
     width: 100%;
