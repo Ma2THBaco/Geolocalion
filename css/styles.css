@@ -15,7 +15,6 @@ body {
 header {
     background: #35424a;
     color: #ffffff;
-    padding: 0; /* Supprime le padding vertical */
     text-align: center;
     display: flex; /* Active Flexbox */
     align-items: center; /* Centre verticalement */
@@ -37,12 +36,13 @@ main {
 
 
 footer {
-    text-align: center;
-    padding: 10px 0;
     background: #35424a;
     color: #ffffff;
-    position: fixed;
-    bottom: 0;
+    position: relative; /* Change la position pour qu'il suive le flux normal */
     width: 100%;
     height: 100px; /* Hauteur du pied de page */
+    text-align: center;
+    display: flex; /* Active Flexbox */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
 }
