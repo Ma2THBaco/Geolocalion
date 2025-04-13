@@ -11,6 +11,35 @@
         <h1>suivi d'un système de géolocalisation autonome</h1>
     </header>
     <main>
+        <p>Hi Quectel community,
+
+            I am a student in engeneer school and I need to build an autonomus geolocalisation system with a base and a rover. I need it to be working without a computer and without an NTRIP if it is possible.
+            
+            So on the Ardupilot forum I found this user Kiwironnie, message 269 (I am asking here because it is where Quectel support suggested me to ask, but I might ask him some advice also if I can't work it out with your help), who seems to describ exactly what I want to do : [![](https://ci3.googleusercontent.com/meips/ADKq_NaA43jjmpyXVGl6_A7qgJcY3F5O4hfrJ2O5Nmo3-Am3-WfVziWZyfTcydIK92cJPncQZVQ5Y8-z7mC6wxWXE_E8aMcl1SzO6RVe4BEQqgAv5Tl0kY9ctXITIsyKc7tx_hKs-tVCvyRgB1IR0TO09Lxeb91ol8X3zYCyxu8PiqkNXja-_fKm3KqW=s0-d-e1-ft#https://discuss.ardupilot.org/uploads/default/optimized/3X/3/7/3716f7fdcf94bb36d1bb4ab1717ba0501a52b6b7_2_32x32.png)ArduPilot DiscourseRTK gps on a budget (Quectel LC29HEA)](https://discuss.ardupilot.org/t/rtk-gps-on-a-budget-quectel-lc29hea/117606/275)  : 
+            "In case anybody is interested, in which case I’ll provide further details, I currently have two LC29H EA boards (from Aliexpress) communicating with two custom PCBs that I designed each with an ESP32-C3 super mini talking to a NiceRF LLCC68 lora radio (operating at 915MHz). One set operates as a rover, the other as a base. The base, which configures its position using survey-in mode, sends RTK correction data via Lora to the rover. The rover achieves a stable RTK fixed solution almost immediately that the base starts sending sufficient correction packets (typically 2 to 4, 255 byte packets per second). No need for intermediate ntrip protocol, just the raw RTK data output from the base effectively relayed to the rover LC29H EA via Lora. Simple, although the firmware took a while to get right. Total cost in the end around NZ$320 (around US$185). Only a few ground trials so far. I’m currently preparing the setup for operating on an ardupilot drone (holybro Kakute H7 mini FC), also currently in construction. The base electronics/antenna is in a case on a tripod. Obviously until the drone is actually in the air this could still all turn to custard, but so far I have no reason to think it won’t work."
+            
+            
+            
+            
+            I was planning on buying : 
+            
+            2 Module LoRa LLCC68 : [![](https://ci3.googleusercontent.com/meips/ADKq_Nbqzncab_3zruV6sXqJCSHHTLshIdD-AV7Fxt_E9btOFwpPdfsHHl0D1iEu-ADXopakrcT2ILwnEmnw3aoTkMyFNluIWmNs7PtBnMJnpLkDsFBlbtA30ho13HH31uMfJmI=s0-d-e1-ft#https://d2ss6ovg47m0r5.cloudfront.net/ico/apples-touch-icon-precomposed.png)TindieCC68-C1 FCC,CE,Certificated 868/915MHz Lora Module](https://www.tindie.com/products/nicerf/cc68-c1-fcccecertificated-868915mhz-lora-module/)
+            
+            2 Quectel LC29HEA : [![](https://ci3.googleusercontent.com/meips/ADKq_NYfCYBQNnhXiwzr7LDVXmZOOc9ND72brQDab4nQpLLOD4jUua7Ahu5oX3UebbGGGpG4lokYCU54Z7E2=s0-d-e1-ft#https://de.aliexpress.com/favicon.ico)de.aliexpress.com](https://de.aliexpress.com/item/1005006704175775.html)
+            
+            2 antennas pour LC29HEA : [![](https://ci3.googleusercontent.com/meips/ADKq_NYfCYBQNnhXiwzr7LDVXmZOOc9ND72brQDab4nQpLLOD4jUua7Ahu5oX3UebbGGGpG4lokYCU54Z7E2=s0-d-e1-ft#https://de.aliexpress.com/favicon.ico)de.aliexpress.com](https://de.aliexpress.com/item/1005005787213411.html?srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=60617169592&aff_fcid=3540050888574459afa4f6f64eb91311-1744291784083-03354-_EIvX7U3&tt=MG&aff_fsk=_EIvX7U3&aff_platform=default&sk=_EIvX7U3&aff_trace_key=3540050888574459afa4f6f64eb91311-1744291784083-03354-_EIvX7U3&shareId=60617169592&businessType=ProductDetail&platform=AE&terminal_id=a1529e2ed8b24c79850b667867d30d6c&afSmartRedirect=y)
+            
+            2 esp32 c3 super mini : [![](https://ci3.googleusercontent.com/meips/ADKq_NZg_SrQA0UbMn_gD-SySK0atMcer5c_uodKYyVnaLVLIQ_J_5XvWwI43nXPLcjNk7MxMnzRCO2PbiAQ=s0-d-e1-ft#https://www.aliexpress.us/favicon.ico)de.aliexpress.com](https://de.aliexpress.com/item/1005008473140836.html?UTABTest=aliabtest112699_10027&src=google&src=google&albch=shopping&acnt=248-630-5778&slnk=&plac=&mtctp=&albbt=Google_7_shopping&gclsrc=aw.ds&albagn=888888&ds_e_adid=&ds_e_matchtype=&ds_e_device=c&ds_e_network=x&ds_e_product_group_id=&ds_e_product_id=fr1005008473140836&ds_e_product_merchant_id=100952152&ds_e_product_country=FR&ds_e_product_language=fr&ds_e_product_channel=online&ds_e_product_store_id=&ds_url_v=2&albcp=19000710609&albag=&isSmbAutoCall=false&needSmbHouyi=false&gad_source=1&gclid=Cj0KCQjw2N2_BhCAARIsAK4pEkUzL7Tn9peonURi2zD0CHhQbfB7PFBL_U7om6TK2BlHS3dcYyHxtQ8aAlrXEALw_wcB&aff_fcid=b4b758c5d35046a9806516b86fe6ea1f-1744290654328-02427-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=b4b758c5d35046a9806516b86fe6ea1f-1744290654328-02427-UneMJZVf&terminal_id=a1529e2ed8b24c79850b667867d30d6c&OLP=1103400108_f_group2&o_s_id=1103400108&afSmartRedirect=n&gatewayAdapt=glo2deu)
+            
+            total = 167.34 euros. The base and the rover would be the same system but doing different things.
+            
+            Would you have some documentation and protocol to help me build my system because I am new to Quectel products and GNSS RTK ?  I would also be very interested in your feedback before buying all this.
+            
+            Thank you for reading this message,
+            
+            Best regards
+            MB
+            </p>
 
         
     </main>
