@@ -29,12 +29,7 @@ main {
     min-height: calc(100vh - 200px); /* Hauteur de la section principale */
 }
 
-h1 {
-    color: #c6bc05;
-}
-h2, h3 {
-    color: #990b0b;
-}
+
 
 
 footer {
